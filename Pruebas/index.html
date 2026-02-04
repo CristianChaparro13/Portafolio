@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slider en HTML y CSS</title>
+<style>
+    *{  margin: 0;
+        padding: 0;
+        border:0;
+        box-sizing: border-box;
+    }
+ 
+    body{
+        background-color: #f5f5f5;
+    }
+    
+    .title{
+        text-align: center;
+    }
+    .slider-box{
+        overflow: hidden;
+        width: 100vh;
+        height: 100vh;
+        margin: 50px auto 0;
+        border: 2px solid blue;
+    }
+
+    #slider{ 
+        display: flex;
+        padding: 0;
+        width: 400%;
+        height: 100vh;
+        background-color: aqua;
+        border: 2px solid red;
+    }
+
+    #slider.active{
+        animation: slide 3s ease-in-out forwards;
+    }
+
+    @keyframes slide{
+        100%{margin-left: -100%;}
+  
+    }
+
+    .slider-box li{
+       width: 100%;
+        height: 100vh;
+        list-style: none;
+        position: relative;
+    }
+
+    .texto{
+        position: absolute;
+        text-align: center;
+        padding: 0 250PX;
+        top:250px;
+        color: #f5f5f5;
+    }
+
+    .texto h2{
+        font-size: 45px;
+        margin-bottom:35px;
+    }
+    .slider-box img{
+        width: 100%;
+        height: 100%;
+    }
+
+   
+
+</style>
+</head>
+<body>
+    <h2 class="title">SLIDER AUTOMATICO</h2>
+    <div class="slider-box">
+        <ul id="slider">
+            <li>
+                <img src="bh.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen1</h2>
+                    <p>
+                      </p>
+                </div>
+
+            </li>
+            <li>
+                <img src="bh2.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen2</h2>
+                    <p>
+                  </p>
+                </div>
+
+            </li>
+            <li>
+                <img src="bh3.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen3</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quisquam autem nostrum corporis dolore magni quam nihil, corrupti porro possimus, beatae sapiente consequuntur, sunt odit cumque quidem ab a fugiat?
+                    </p>
+                </div>
+
+            </li>
+            <li>
+                <img src="s4.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen4</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quisquam autem nostrum corporis dolore magni quam nihil, corrupti porro possimus, beatae sapiente consequuntur, sunt odit cumque quidem ab a fugiat?
+                    </p>
+                </div>
+
+            </li>
+        </ul>
+           
+    </div>
+
+    <script>
+        
+const slider=
+document.getElementById("slider")
+
+slider.addEventListener("click", () =>{
+    slider.classList.toggle("active")
+
+})
+    </script>
+    
+
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slider en HTML y CSS</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+ 
+    body {
+        background-color: #f5f5f5;
+    }
+    
+    .title {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .slider-box {
+        width: 1200px;
+        overflow: hidden;
+        margin: 50px auto;
+        border: 2px solid blue;
+    }
+
+    .slider-box ul { 
+        display: flex;
+        padding: 0;
+        width: 400%;
+        animation: slide 12s infinite ease-in-out;
+    }
+
+    .slider-box li {
+        width: 100%;
+        list-style: none;
+        position: relative;
+    }
+
+    .texto {
+        position: absolute;
+        text-align: center;
+        padding: 0 250px;
+        top: 250px;
+        color: #f5f5f5;
+    }
+
+    .texto h2 {
+        font-size: 45px;
+        margin-bottom: 35px;
+    }
+
+    .slider-box img {
+        width: 100%;
+    }
+
+    @keyframes slide {
+        0%, 20% { margin-left: 0; }
+        25%, 45% { margin-left: -100%; }
+        50%, 70% { margin-left: -200%; }
+        75%, 100% { margin-left: -300%; }
+    }
+</style>
+</head>
+<body>
+    <h2 class="title">SLIDER AUTOMÁTICO</h2>
+    <div class="slider-box">
+        <ul>
+            <li>
+                <img src="s1.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen1</h2>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+            </li>
+            <li>
+                <img src="s2.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen2</h2>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+            </li>
+            <li>
+                <img src="s3.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen3</h2>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+            </li>
+            <li>
+                <img src="s4.jpg" alt="">
+                <div class="texto">
+                    <h2>Imagen4</h2>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
